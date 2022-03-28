@@ -6,6 +6,17 @@
             <div class="pull-left mt-2">
                 <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
             </div>
+            <div>
+            <form class="form" method="GET" action="{{ url('mahasiswa.search') }}">
+                <div class="form-group w-100 mb-3">
+                    <label for="search" class="d-block mr-2">Pencarian</label>
+                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
+                    <button type="submit" class="btn btn-primary mb-1">Cari</button>
+                </div>
+            </form>
+            </div>
+		
+	<br/>
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>
             </div>
@@ -27,6 +38,9 @@
     <tr>
         <th>Nim</th>
         <th>Nama</th>
+        <th>Tanggal Lahir</th>
+        <th>Alamat</th>
+        <th>E-mail</th>
         <th>Kelas</th>
         <th>Jurusan</th>
         <th width="280px">Action</th>
@@ -36,6 +50,9 @@
     
         <td>{{ $mhs ->nim }}</td>
         <td>{{ $mhs ->nama }}</td>
+        <td>{{ $mhs ->tanggal }}</td>
+        <td>{{ $mhs ->alamat }}</td>
+        <td>{{ $mhs ->email }}</td>
         <td>{{ $mhs ->kelas }}</td>
         <td>{{ $mhs ->jurusan }}</td>
         <td>

@@ -17,7 +17,10 @@
          */
         protected $fillable = [ 
             'Nim', 
-            'Nama', 
+            'Nama',
+            'Tanggal',
+            'Alamat',
+            'Email', 
             'Kelas', 
             'Jurusan', 
         ]; 

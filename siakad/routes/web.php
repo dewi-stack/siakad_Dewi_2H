@@ -21,4 +21,6 @@ Route::get('/', function () {
 });
 */
 
+
 Route::resource('mahasiswa', MahasiswaController::class);
+
