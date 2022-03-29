@@ -13,12 +13,16 @@ class MahasiswaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() 
+    public function index(Request $request) 
     { 
+        if($request->has('search')){
+            $mahasiswa = Mahasiswa::where('nama', 'LIKE', '%' .$request->search. '%')->paginate(4);
+        }
+        else{
+            $mahasiswa = Mahasiswa::orderBy('id_mahasiswa', 'asc')->paginate(4); 
+        }
         //fungsi eloquent menampilkan data menggunakan pagination
-        $mahasiswa = Mahasiswa::all(); // Mengambil semua isi tabel
-        $paginate = Mahasiswa::orderBy('id_mahasiswa', 'asc')->paginate(4); 
-        return view('mahasiswa.index', ['mahasiswa' => $mahasiswa,'paginate'=>$paginate]); 
+        return view('mahasiswa.index',compact('mahasiswa')); 
     } 
 
     public function create() 
@@ -88,14 +92,6 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
         ->with('success', 'Mahasiswa Berhasil Diupdate'); 
     }
-    
-    public function search(Request $request)
-    {
-        $keyword = $request->get(search);
-        $nama = Mahasiswa::where('nama', 'like', "%" . $keyword . "%")->paginate(4);
-        return view('mahasiswa.index', compact('nama'));
-    }
-	
 
     public function destroy($nim) 
     { 

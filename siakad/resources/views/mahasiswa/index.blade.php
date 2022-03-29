@@ -7,10 +7,10 @@
                 <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
             </div>
             <div>
-            <form class="form" method="GET" action="{{ url('mahasiswa.search') }}">
+            <form class="form" method="GET" action="/mahasiswa">
                 <div class="form-group w-100 mb-3">
                     <label for="search" class="d-block mr-2">Pencarian</label>
-                    <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
+                    <input type="search" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
                     <button type="submit" class="btn btn-primary mb-1">Cari</button>
                 </div>
             </form>
@@ -68,4 +68,5 @@
     </tr>
     @endforeach 
     </table>
+    {{ $mahasiswa->links() }}
 @endsection 
