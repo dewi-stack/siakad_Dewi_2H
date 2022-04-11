@@ -45,7 +45,7 @@
         <th>Jurusan</th>
         <th width="280px">Action</th>
     </tr>
-    @foreach ($mahasiswa as $mhs) 
+    @foreach ($paginate as $mhs) 
     <tr>
     
         <td>{{ $mhs ->nim }}</td>
@@ -53,7 +53,7 @@
         <td>{{ $mhs ->tanggal }}</td>
         <td>{{ $mhs ->alamat }}</td>
         <td>{{ $mhs ->email }}</td>
-        <td>{{ $mhs ->kelas }}</td>
+        <td>{{ $mhs ->kelas->nama_kelas }}</td>
         <td>{{ $mhs ->jurusan }}</td>
         <td>
         <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->nim]) }}" method="POST">
@@ -68,5 +68,5 @@
     </tr>
     @endforeach 
     </table>
-    {{ $mahasiswa->links() }}
+    {{ $paginate->links() }}
 @endsection 
