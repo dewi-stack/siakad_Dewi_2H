@@ -5,7 +5,7 @@
     use Illuminate\Foundation\Auth\Mahasiswa as Authenticatable; 
     use Illuminate\Notifications\Notifiable; 
     use Illuminate\Database\Eloquent\Model; //Model Eloquent
-    use App\Models\Mahasiswa;
+    use App\Models\Kelas;
     
     class Mahasiswa extends Model //Definisi Model
     { 

@@ -1,0 +1,15 @@
+describe('empty spec', () => {
+  it('passes', () => {
+    cy.visit('http://127.0.0.1:8000/mahasiswa')
+    cy.get('body')
+    cy.get('.btn-success').click()
+    cy.get('#Nim').type('2041720191')
+    cy.get('#Nama').type("Fery Darmawan")
+    cy.get('#Tanggal').type("2000-12-19")
+    cy.get('#Alamat').type("Bekasi")
+    cy.get('#Email').type("feridarmwn15@gmail.com")
+    cy.get('#Kelas').select("TI 2C")
+    cy.get('#Jurusan').type("Jurusan Teknologi Informasi")  
+    cy.get('.btn-primary').click()
+  })
+})

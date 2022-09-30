@@ -37,7 +37,7 @@
         </div>
         <div class="form-group">
             <label for="Alamat">Alamat</label> 
-            <input type="text" name="Alamat" class="form-control" id="Alamat" value="{{ $Mahasiswa->alamat }}" aria-describedby="Alamat" > 
+            <input type="text" name="Alamat" class="form-control" id="Alamat" value="{{ $Mahasiswa->alamat }}" aria-describedby="Alamat" data-id="Alamat"> 
         </div>
         <div class="form-group">
             <label for="Email">E-mail</label> 
@@ -55,7 +55,7 @@
             <label for="Jurusan">Jurusan</label> 
             <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->jurusan }}" aria-describedby="Jurusan" > 
         </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" data-id="btn-primary">Submit</button>
     </form>
     </div>
     </div>
